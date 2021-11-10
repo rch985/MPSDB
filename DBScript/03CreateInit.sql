@@ -1,6 +1,6 @@
 USE [MPS]
 GO
---Married					CHAR(1),				--»éÒö×´¿ö[SÎ´»é¡¢MÒÑ»é¡¢UÎ´Öª]
+--Married					CHAR(1),				--å©šå§»çŠ¶å†µ[Sæœªå©šã€Må·²å©šã€UæœªçŸ¥]
 
 
 DECLARE @ADMID VARCHAR(32);
@@ -9,29 +9,29 @@ SET @ADMID = '7e24b879e94745eb99d9fbffcbf6d1c1';
 DECLARE @CURTIME DATETIME;
 SET @CURTIME = '2021-09-23 11:31:29'
 
---²åÈëÏµÍ³¹ÜÀíÔ±ÕËºÅĞÅÏ¢
+--æ’å…¥ç³»ç»Ÿç®¡ç†å‘˜è´¦å·ä¿¡æ¯
 INSERT INTO TbSysUser(Id, Account, [Password], RealName, Gender, UserState, RegisterTime, HireTime, IsAdmin, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES(@ADMID, 'adm', 'pBga3b5ppIPfi/SqRHo20Q==', 'ÏµÍ³¹ÜÀíÔ±', 'M', 1, @CURTIME, @CURTIME, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
+VALUES(@ADMID, 'adm', 'pBga3b5ppIPfi/SqRHo20Q==', 'ç³»ç»Ÿç®¡ç†å‘˜', 'M', 1, @CURTIME, @CURTIME, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
 
---²åÈë¶¥¼¶µ¼º½²Ëµ¥ĞÅÏ¢
+--æ’å…¥é¡¶çº§å¯¼èˆªèœå•ä¿¡æ¯
 INSERT INTO TbSysMenu(Id, Pid, MenuName, MenuCode, MenuLevel, MenuState, SortIndex, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES('SysNaviMenu', 'TopNode', 'µ¼º½²Ëµ¥', 'SysNaviMenu', 1, 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
+VALUES('SysNaviMenu', 'TopNode', 'å¯¼èˆªèœå•', 'SysNaviMenu', 0, 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
 
---²åÈë¶¥¼¶²¿ÃÅĞÅÏ¢
+--æ’å…¥é¡¶çº§éƒ¨é—¨ä¿¡æ¯
 INSERT INTO TbSysDepart(Id, Pid, DepartName, DepartCode, DepartState, SortIndex, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES('SysDepartment', 'TopNode', '²¿ÃÅµ¥Î»', 'SysDepartment', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
+VALUES('SysDepartment', 'TopNode', 'éƒ¨é—¨å•ä½', 'SysDepartment', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
 
---²åÈë¶¥¼¶ĞĞÕşÇø»®ĞÅÏ¢
+--æ’å…¥é¡¶çº§è¡Œæ”¿åŒºåˆ’ä¿¡æ¯
 INSERT INTO TbSysArea(Id, Pid, AreaName, ShortName, AreaType, AreaCode, SortIndex, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES('SysArea', 'TopNode', 'ÖĞ»ªÈËÃñ¹²ºÍ¹ú', 'ÖĞ¹ú', 1, 'China', 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
+VALUES('SysArea', 'TopNode', 'ä¸­åäººæ°‘å…±å’Œå›½', 'ä¸­å›½', 1, 'China', 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
 
---²åÈë¶¥¼¶À¸Ä¿ĞÅÏ¢
+--æ’å…¥é¡¶çº§æ ç›®ä¿¡æ¯
 INSERT INTO TbInfoColumn(Id, Pid, ColumnName, ColumnCode, ColumnState, SortIndex, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES('NodeInfoColumn', 'TopNode', 'À¸Ä¿Ä£¿é', 'InfoColumn', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
+VALUES('NodeInfoColumn', 'TopNode', 'æ ç›®æ¨¡å—', 'InfoColumn', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME);
 
---²åÈë¶¥¼¶ÉÌÆ··ÖÀàĞÅÏ¢
+--æ’å…¥é¡¶çº§å•†å“åˆ†ç±»ä¿¡æ¯
 INSERT INTO TbGoodsClassify(Id, Pid, ClassifyName, ClassifyState, SortIndex, IsDeleted, Creater, CreateTime, Updater, UpdateTime)
-VALUES('NodeGoodsClassify', 'TopNode', 'ÉÌÆ··ÖÀà', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME)
+VALUES('NodeGoodsClassify', 'TopNode', 'å•†å“åˆ†ç±»', 1, 1, 0, @ADMID, @CURTIME, @ADMID, @CURTIME)
 
 
 
